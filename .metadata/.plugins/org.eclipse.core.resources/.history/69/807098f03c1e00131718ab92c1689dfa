@@ -1,0 +1,26 @@
+
+public class Fraction 
+{
+	private int numerator;
+	private int denominator;
+
+	/* Constructor for being given numerator and denominator
+	 * 
+	 */
+	public Fraction (int num, int denom)
+	{
+		numerator = num;
+		denominator = denom;
+		
+	}
+	public Fraction (int top)
+	{
+		numerator = top;
+		denominator = 1;
+		
+	}
+	public String toString()
+	{
+		return numerator + "/" + denominator;
+	}
+}

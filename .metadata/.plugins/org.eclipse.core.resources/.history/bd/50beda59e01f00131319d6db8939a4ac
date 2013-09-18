@@ -1,0 +1,61 @@
+
+public class MixedNumber 
+{
+	private int wholeNumber;
+	private int numerator;
+	private int denominator;
+	
+	// Ctor
+	public MixedNumber (int whole, int num, int denom)
+	{
+		wholeNumber = whole;
+		numerator = num / Fraction.greatestCommonFactor(num, denom);
+		denominator = denom / Fraction.greatestCommonFactor(num, denom);
+	}
+	
+	// Ctor
+	public MixedNumber (int num, int denom)
+	{
+		wholeNumber = 0;
+		while (num >= denom)
+		{
+			num = num - denom;
+			wholeNumber= wholeNumber +1;
+		}
+		numerator = num / Fraction.greatestCommonFactor(num, denom);
+		denominator = denom / Fraction.greatestCommonFactor(num, denom);
+	}
+	
+	// Ctor
+	public MixedNumber (int whole)
+	{
+		
+	}
+	
+	// Ctor
+	public MixedNumber (Fraction frac)
+	{
+		
+	}
+	
+	// ToString
+	public String toString()
+	{
+		if (denominator == 1)
+		{
+			return "" + (numerator + wholeNumber);
+		}
+		if (wholeNumber == 0)
+		{
+			return numerator + "/" + denominator;
+		}
+		if (numerator == 0)
+		{
+			return "" + wholeNumber;
+		}
+		else
+		{
+			return wholeNumber + " " + numerator + "/" + denominator;
+		}
+	}
+}

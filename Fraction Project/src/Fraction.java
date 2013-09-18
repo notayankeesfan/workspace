@@ -1,0 +1,156 @@
+/*
+ * Fraction.java: class creates Fraction object
+ * Rohan Kadambi Last edit: 2013-09-16 21:00
+ */
+public class Fraction 
+{
+	private int numerator;
+	private int denominator;
+
+	//Ctor: Creates a Fraction given numerator and denominator
+	public Fraction (int num, int denom)
+	{
+
+			numerator = num / greatestCommonFactor(num, denom);
+			denominator = denom / greatestCommonFactor(num, denom);
+		if (denominator < 0)
+		{
+			denominator = Math.abs(denominator);
+			numerator = - numerator;
+		}
+	}
+	
+	// Ctor: Creates a Fraction for an integer
+	public Fraction (int num)
+	{
+		numerator = num;
+		denominator = 1;
+		
+	}
+	
+	/* Finds greatestCommonFactor of two numbers to reduce fractions
+	 *
+	 */
+	public static int greatestCommonFactor(int firstInt, int secondInt)
+	{
+		if (firstInt == 0 || secondInt == 0)
+		{
+			return 1;
+		}
+		else 
+		{
+			firstInt = Math.abs(firstInt);
+			secondInt = Math.abs(secondInt);
+			if (firstInt > secondInt)
+			{
+				while (firstInt % secondInt != 0)
+				{
+					int remainder = firstInt % secondInt;
+					firstInt = secondInt;
+					secondInt = remainder;
+				}
+				return secondInt;
+			}
+			else
+			{	
+				while (secondInt % firstInt !=0)
+				{
+					int remainder = secondInt % firstInt;
+					secondInt = firstInt;
+					firstInt = remainder;
+				}
+				return firstInt;
+			}
+		}	
+	}
+	// Creates String form of object
+	public String toString()
+	{
+		if (denominator == 0)
+		{
+			return "undefined";
+		}
+		if (denominator == 1)
+		{	
+			return "" + numerator;
+		}
+		if (numerator == 0)
+		{
+			return "" + 0;
+		}
+		else
+		{
+			return numerator + "/" + denominator;
+		}
+	}
+	
+	// Adds two Fractions together
+	public Fraction add(Fraction secondFrac)
+	{
+		int newNum = (this.numerator * secondFrac.getDenom()) + (this.denominator * secondFrac.getNum());
+		int newDenom = this.denominator * secondFrac.getDenom();
+		return new Fraction (newNum, newDenom);
+	}
+	
+	// Subtract second fraction from the first
+	public Fraction subtract(Fraction secondFrac)
+	{
+		int newNum = (this.numerator * secondFrac.getDenom()) - (this.denominator * secondFrac.getNum());
+		int newDenom = this.denominator * secondFrac.getDenom();
+		return new Fraction (newNum, newDenom);
+	}
+	// Multiplies two Fractions
+	public Fraction multiply(Fraction secondFrac)
+	{
+		int newNum = this.numerator * secondFrac.numerator;
+		int newDenom = this.denominator * secondFrac.denominator;
+		return new Fraction (newNum, newDenom);
+	}
+	
+	// Divide first fraction by second
+	public Fraction divide(Fraction secondFrac)
+	{
+		int newNum = this.numerator * secondFrac.denominator;
+		int newDenom = this.denominator * secondFrac.numerator;
+		return new Fraction (newNum, newDenom);
+	}
+	
+	// Converts Fraction to Decimal equivalent
+	public double toDecimal()
+	{
+		double decimal = (double) (this.getNum()) / (this.getDenom());
+		return decimal;
+	}
+	
+	// Finds reciprocal of Fraction
+	public Fraction reciprocal()
+	{
+		int newNum = this.denominator;
+		int newDenom = this.numerator;
+		return new Fraction (newNum, newDenom);
+	}
+	
+	// Returns Numerator Value
+	public int getNum()
+	{
+		return this.numerator;
+	}
+	
+	// Modifies Numerator Value
+	public void setNum(int num)
+	{
+		numerator = num;
+	}
+	
+	// Returns Denominator Value
+	public int getDenom()
+	{
+		return this.denominator;
+	}
+	
+	// Modifies Denominator Value
+	public void setDenom(int denom)
+	{
+		denominator = denom;
+	}
+}

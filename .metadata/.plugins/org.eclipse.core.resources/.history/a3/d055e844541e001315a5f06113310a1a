@@ -1,0 +1,92 @@
+
+public class Fraction 
+{
+	private int numerator;
+	private int denominator;
+
+	//Ctor: Creates a Fraction given numerator and denominator
+	public Fraction (int num, int denom)
+	{
+		numerator = num;
+		denominator = denom;
+		
+	}
+	
+	// Ctor: Creates a Fraction for an integer
+	public Fraction (int num)
+	{
+		numerator = num;
+		denominator = 1;
+		
+	}
+	
+	// Creates String form of object
+	public String toString()
+	{
+		if (denominator == 1)
+			return "" + numerator;
+		else
+			return numerator + "/" + denominator;
+	}
+	
+	// Adds two Fractions together
+	public Fraction add(Fraction second)
+	{
+		int newNum = (this.numerator * second.getDenom()) + (this.denominator * second.getNum());
+		int newDenom = this.denominator * second.getDenom();
+		return new Fraction (newNum, newDenom);
+	}
+	
+	// Subtract second fraction from the first
+	public Fraction subtract(Fraction second)
+	{
+		int newNum = (this.numerator * second.getDenom()) - (this.denominator * second.getNum());
+		int newDenom = this.denominator * second.getDenom();
+		return new Fraction (newNum, newDenom);
+	}
+	// Multiplies two Fractions
+	public Fraction multiply(Fraction second)
+	{
+		int newNum = this.numerator * second.numerator;
+		int newDenom = this.denominator * second.denominator;
+		return new Fraction (newNum, newDenom);
+	}
+	
+	// Divide first fraction by second
+	public Fraction divide(Fraction second)
+	{
+		int newNum = this.numerator * second.denominator;
+		int newDenom = this.denominator * second.numerator;
+		return new Fraction (newNum, newDenom);
+	}
+	
+	// Converts Fraction to Decimal equivalent
+	public double toDecimal()
+	{
+		double decimal = (this.getNum()) / (this.getDenom());
+		return decimal;
+	}
+	// Returns Numerator Value
+	public int getNum()
+	{
+		return this.numerator;
+	}
+	
+	// Modifies Numerator Value
+	public void setNum(int num)
+	{
+		numerator = num;
+	}
+	
+	// Returns Denominator Value
+	public int getDenom()
+	{
+		return this.denominator;
+	}
+	
+	// Modifies Denominator Value
+	public void setDenom(int denom)
+	{
+		denominator = denom;
+	}
+}

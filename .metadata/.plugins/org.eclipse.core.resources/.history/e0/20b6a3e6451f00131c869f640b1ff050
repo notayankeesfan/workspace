@@ -1,0 +1,45 @@
+
+public class MixedNumber 
+{
+	private int wholeNumber;
+	private int numerator;
+	private int denominator;
+	
+	// Ctor
+	public MixedNumber (int whole, int num, int denom)
+	{
+		wholeNumber = whole;
+		numerator = num;
+		denominator = denom;
+	}
+	
+	// Ctor
+	public MixedNumber (int num, int denom)
+	{
+		wholeNumber = 0;
+		numerator = num;
+		denominator = denom;
+		
+	}
+	
+	// Ctor
+	public MixedNumber (int whole)
+	{
+		
+	}
+	
+	// Ctor
+	public MixedNumber (Fraction frac)
+	{
+		
+	}
+	
+	// ToString
+	public String toString()
+	{
+		if (denominator == 1)
+			return "" + numerator;
+		else
+			return wholeNumber + " " + numerator + "/" + denominator;
+	}
+}

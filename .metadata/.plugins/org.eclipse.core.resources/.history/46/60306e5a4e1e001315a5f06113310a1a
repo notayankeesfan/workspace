@@ -1,0 +1,63 @@
+
+public class Fraction 
+{
+	private int numerator;
+	private int denominator;
+
+	//Ctor: Creates a Fraction given numerator and denominator
+	public Fraction (int num, int denom)
+	{
+		numerator = num;
+		denominator = denom;
+		
+	}
+	
+	// Ctor: Creates a Fraction for an integer
+	public Fraction (int num)
+	{
+		numerator = num;
+		denominator = 1;
+		
+	}
+	
+	//Creates String form of object
+	public String toString()
+	{
+		if (denominator == 1)
+			return "" + numerator;
+		else
+			return numerator + "/" + denominator;
+	}
+	
+	// Adds two Fractions together
+	public Fraction add(Fraction second)
+	{
+		int newNum = (this.numerator * second.getDenom()) + (this.denominator * second.getNum());
+		int newDenom = this.denominator * second.getDenom();
+		return Fraction (newNum, newDenom);
+	}
+	
+	// Returns Numerator Value
+	public int getNum()
+	{
+		return this.numerator;
+	}
+	
+	// Modifies Numerator Value
+	public void setNum(int num)
+	{
+		numerator = num;
+	}
+	
+	// Returns Denominator Value
+	public int getDenom()
+	{
+		return this.denominator;
+	}
+	
+	// Modifies Denominator Value
+	public void setDenom(int denom)
+	{
+		denominator = denom;
+	}
+}

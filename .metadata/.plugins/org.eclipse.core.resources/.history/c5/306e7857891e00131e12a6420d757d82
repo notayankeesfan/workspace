@@ -1,0 +1,10 @@
+
+public class TestMixedNumber
+{
+	public static void main (String [] args)
+	{
+		//Test Ctor; (whole, num, denom)
+		MixedNumber MixedNumberA = new MixedNumber (2, 3, 4);
+		System.out.println ("Mixed Number A is " MixedNumberA.toString());
+	}
+}

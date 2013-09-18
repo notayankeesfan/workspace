@@ -1,0 +1,29 @@
+
+public class TestFraction 
+{
+	public static void main (String [] args)
+	{
+		// Test two int constructor
+		Fraction FractionA = new Fraction(-3, 4);
+		System.out.println ("FractionA is " + FractionA.toString() );
+		
+		//Test single integer constructor
+		Fraction FractionB = new Fraction (5);
+		System.out.println ("FractionB is " + FractionB.toString() );
+		
+		//Test add() method
+		Fraction FractionC = FractionA.add(FractionB);
+		System.out.println ("FractionA + FractionB equals " + FractionC );
+		
+		//Test subtract method
+		FractionC = FractionA.subtract(FractionB);
+		System.out.println ("FractionA - Fraction B equals " + FractionC );
+		//Test multiply() method
+		FractionC = FractionA.multiply(FractionB);
+		System.out.println ("FractionA * FractionB equals " + FractionC);
+		
+		//Test divide() method
+		FractionC = FractionA.divide(FractionB);
+		System.out.println ("FractionA / FractionB equals " + FractionC);
+	}
+}

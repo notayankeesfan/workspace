@@ -1,0 +1,54 @@
+
+public class Fraction 
+{
+	private int numerator;
+	private int denominator;
+
+	/* Constructor for being given numerator and denominator
+	 * 
+	 */
+	public Fraction (int num, int denom)
+	{
+		numerator = num;
+		denominator = denom;
+		
+	}
+	public Fraction (int num)
+	{
+		numerator = num;
+		denominator = 1;
+		
+	}
+	public String toString()
+	{
+		if (true)
+			denominator = 1;
+			return  "" + numerator;
+		else
+			return numerator + "/" + denominator;
+	}
+	
+	// Returns Numerator Value
+	public int getNum()
+	{
+		return this.numerator;
+	}
+	
+	// Modifies Numerator Value
+	public void setNum(int num)
+	{
+		numerator = num;
+	}
+	
+	// Returns Denominator Value
+	public int getDenom()
+	{
+		return this.denominator;
+	}
+	
+	// Modifies Denominator Value
+	public void setDenom(int denom)
+	{
+		denominator = denom;
+	}
+}

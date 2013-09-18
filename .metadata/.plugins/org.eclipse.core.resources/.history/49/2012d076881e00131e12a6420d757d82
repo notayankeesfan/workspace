@@ -1,0 +1,31 @@
+
+public class MixedNumber 
+{
+	private int wholeNumber;
+	private int numerator;
+	private int denominator;
+	
+	//Ctor
+	public MixedNumber (int whole, int num, int denom)
+	{
+		
+	}
+	
+	//Ctor
+	public MixedNumber (int num, int denom)
+	{
+		
+	}
+	
+	//Ctor
+	public MixedNumber (int whole)
+	{
+		
+	}
+	
+	//Ctor
+	public MixedNumber (Fraction frac)
+	{
+		
+	}
+}

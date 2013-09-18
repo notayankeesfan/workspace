@@ -1,0 +1,14 @@
+
+public class TestFraction 
+{
+	public static void main (String [] args)
+	{
+		// Test two int constructor
+		Fraction FractionA = new Fraction(3, 4);
+		System.out.println ("FractionA is " + FractionA.toString());
+		
+		//Test single integer constructor
+		Fraction FractionB = new Fraction (5);
+		System.out.println ("FractionB is " + FractionB.toString());
+	}
+}
